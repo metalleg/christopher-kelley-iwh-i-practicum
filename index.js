@@ -26,7 +26,7 @@ app.get('/', async (req, res) => {
         console.error(error);
     }
 });
-// TODO: ROUTE 2 
+// TODO: ROUTE
 app.get('/update-cobj/', async (req, res) => {
 
     try {
