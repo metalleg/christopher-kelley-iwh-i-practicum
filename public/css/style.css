@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+<<<<<<< HEAD
 .container {
     align-items: center;
     display: flex;
@@ -7,6 +8,8 @@
     flex-direction: column;
     gap: 20px;
 }
+=======
+>>>>>>> b3711656b1f6a88654b80bb0dfc799fe0f4617cd
 body, * {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -62,6 +65,7 @@ input[type="submit"] {
     border: none;
     padding: .375rem 1rem;
     margin-top: 10px;
+<<<<<<< HEAD
 }
 
 table {
@@ -72,4 +76,6 @@ table td {
 }
 table th {
     background-color: bisque;
+=======
+>>>>>>> b3711656b1f6a88654b80bb0dfc799fe0f4617cd
 }
