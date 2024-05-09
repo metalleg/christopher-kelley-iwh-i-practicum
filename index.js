@@ -10,23 +10,23 @@ app.use(express.json());
 
 const token = process.env.TOKEN;
 
-// TODO: ROUTE 1 
+// Home Route
 app.get('/', async (req, res) => {
-    const cobj = 'https://api.hubspot.com/crm/v3/objects/2-28943440&properties=firstname&properties=lastname';
+    const babies = 'https://api.hubapi.com/crm/v3/objects/babies?limit=10&properties=name&properties=description&properties=age';
     const headers = {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'
     }
     try {
-        const resp = await axios.get(cobj, { headers });
+        const resp = await axios.get(babies, { headers });
         const data = resp.data.results;
-        console.log(data);
         res.render('homepage', { title: 'All These Babies | Integrating With HubSpot I Practicum', data });      
     } catch (error) {
         console.error(error);
     }
 });
-// TODO: ROUTE
+
+// Form Route
 app.get('/update-cobj/', async (req, res) => {
 
     try {
@@ -37,7 +37,7 @@ app.get('/update-cobj/', async (req, res) => {
     }
 });
 
-// TODO: ROUTE 3 - Create a new app.post route for the custom objects form to create or update your custom object data. Once executed, redirect the user to the homepage.
+// Post Route
 app.post('/update-cobj/', async (req, res) => {
 
     const postData = {
@@ -48,8 +48,8 @@ app.post('/update-cobj/', async (req, res) => {
         }
     }
 
-    const newCobj = `https://api.hubapi.com/crm/v3/objects/babies/`;
-    //const newCobj = `https://api.hubapi.com/crm/v3/objects/2-28943440/`;
+    //const newCobj = `https://api.hubapi.com/crm/v3/objects/babies/`;
+    const newCobj = `https://api.hubapi.com/crm/v3/objects/2-28943440/`;
     const headers = {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'
