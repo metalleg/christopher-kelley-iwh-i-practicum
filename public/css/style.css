@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+.container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
 body, * {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -55,4 +62,14 @@ input[type="submit"] {
     border: none;
     padding: .375rem 1rem;
     margin-top: 10px;
+}
+
+table {
+    border: 1px solid lightgrey;
+}
+table td {
+    padding: 5px 10px;
+}
+table th {
+    background-color: bisque;
 }

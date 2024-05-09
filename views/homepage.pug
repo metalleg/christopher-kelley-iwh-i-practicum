@@ -1,0 +1,20 @@
+doctype html
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        .container
+            h1 Babies Table
+            a(href='/update-cobj') Add to this table
+            table
+                thead
+                    th Name
+                    th Description
+                    th Age
+                each baby in data
+                    tr
+                        td #{baby.properties.name}
+                        td #{baby.properties.description}
+                        td #{baby.properties.age}
