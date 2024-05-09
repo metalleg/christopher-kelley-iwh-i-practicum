@@ -10,9 +10,7 @@ app.use(express.json());
 
 const token = process.env.TOKEN;
 
-// TODO: ROUTE 1 - Create a new app.get route for the homepage to call your custom object data. Pass this data along to the front-end and create a new pug template in the views folder.
-
-// * Code for Route 1 goes here
+// TODO: ROUTE 1 
 app.get('/', async (req, res) => {
     const cobj = 'https://api.hubspot.com/crm/v3/objects/2-28943440&properties=firstname&properties=lastname';
     const headers = {
@@ -28,11 +26,15 @@ app.get('/', async (req, res) => {
         console.error(error);
     }
 });
-// TODO: ROUTE 2 - Create a new app.get route for the form to create or update new custom object data. Send this data along in the next route.
-// * Code for Route 2 goes here
+// TODO: ROUTE 2 
 app.get('/update-cobj/', async (req, res) => {
-    res.render('cobj', { title: 'Update Custom Object Form | Integrating With HubSpot I Practicum', data });      
 
+    try {
+        res.render('updates', { title: 'Update Custom Object Form | Integrating With HubSpot I Practicum'});
+    
+    } catch(err) {
+        console.error(err);
+    }
 });
 
 // TODO: ROUTE 3 - Create a new app.post route for the custom objects form to create or update your custom object data. Once executed, redirect the user to the homepage.
